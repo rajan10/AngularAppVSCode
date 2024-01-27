@@ -1,0 +1,2 @@
+# AngularAppVSCode
+Angular based apps
