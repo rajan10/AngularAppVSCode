@@ -1,0 +1,40 @@
+<h2> Welcome to Anglular Frame w/k</h2>
+
+
+<div>
+  <h4>Data Bindings Example</h4>
+
+  First Name : {{fname}} <br/>
+
+  Last Name : {{lname}} <br/>
+
+  Age : {{age}} <br/>
+
+  Gender : {{gender}} <br/>
+
+  Country : {{country}} <br/>
+
+  Is Employed : {{isEmployed}} <br/>
+
+  <hr/>
+
+  First Name : <input type="text" [(ngModel)]="fname"/><br/>
+  Last Name : <input type="text" [(ngModel)]="lname"/><br/>
+  Age : <input type="text" [(ngModel)]="age"/><br/>
+  Gender :
+    <input type="radio" [ngModel]="gender" value="Male">Male
+    <input type="radio" [ngModel]="gender" value="Female">Female <br/>
+
+  Country :
+    <select [ngModel]="country">
+        <option>Nepal</option>
+        <option>USA</option>
+        <option>UK</option>
+    </select> <br/>
+
+    Is Employed : <input type="checkbox" [ngModel]="isEmployed"> <br/>
+  <input type="button" value="Submit" (click)="handleSubmitBtn()" />
+</div>
+
+
+
