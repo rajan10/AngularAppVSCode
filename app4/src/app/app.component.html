@@ -1,17 +1,30 @@
 <div>
   <h3>
     
-    ngIf Directive ( Structural Directive )example page.
+    ngSwitch Directive ( Structural Directive )example page.
   </h3>
 <!-- Using Angular's style binding to dynamically set the color 
 Here, the color of the div is bound to the value of mycolor, which is determined by the logic in the component. -->
  <!-- <div [style.color]="mycolor">{{marks}}</div> -->
 
+<!-- Using Angular's ngIf Structural directive to dynamically set the color -->
+ <!-- if *ngIf is true then first <div> element will be displayed and second div element will display if value of b is falsy--> 
+ <!-- <div *ngIf="b" style="background-color:blue">Congratulations!!!</div>
 
- <!-- the ngClass directive is used to add and remove CSS classes
-In the template, the [ngClass] directive is used to bind the CSS class dynamically. 
-If myclass is "class1", the element will have the color:green; if it's "class2", the element will have the coler:red style -->
- <div *ngIf="b" style="background-color:blue">Congratulations!!!</div>
+ <div *ngIf="!b" style="background-color:red">Sorry!!!</div> -->
 
- <div *ngIf="!b" style="background-color:red">Sorry!!!</div>
+<select [ngModel]="selectedCountry"> <!--ngModel directive(2-way directive) is binding to selectedCountry -->
+  <option>Nepal</option>
+  <option>India</option>
+  <option>USA</option>
+  <option>UK</option>
+</select>
+<p>Selected Country:{{selectedCountry}}</p>
+
+ <div [ngSwitch]="selectedCountry">
+  <p *ngSwitchCase="'Nepal'">Nepal </p> <!--ngSwitchCase value must be a string-->
+  <p *ngSwitchCase="'India'">India</p>
+  <p *ngSwitchCase="'USA'"> USA</p>
+  <p *ngSwitchCase="'UK'">UK</p>
+  <p *ngSwitchDefault>Please select country</p>
 </div>
