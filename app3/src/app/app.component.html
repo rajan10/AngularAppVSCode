@@ -3,7 +3,8 @@
 
 <div>
   <h4>Data Bindings Example</h4>
-
+<!-- 1 way binding is used here to display the values of fname, lname from component to template 
+{{}} are directives and they change  the behavior of HTML DOM -->
   First Name : {{fname}} <br/>
 
   Last Name : {{lname}} <br/>
@@ -17,22 +18,33 @@
   Is Employed : {{isEmployed}} <br/>
 
   <hr/>
+<!-- Below here u r using 2-way data binding ([(ngModel)]) with various input elements 
+(text input, radio buttons, select dropdown, checkbox) to update the values of component properties
+This allows properties/values in the components to be automatically updated  when the user interacts
+with the input elements in the UI and vice versa-->
 
+<!-- [(ngModel)] updates HTML values to the component automatically
+But, u have to define the placeholder in typescript file similar to Java file-->
+
+<!-- The [(ngModel)] is Angular's syntax for two-way data binding. It combines the functionality of property binding ([ngModel]) 
+  and event binding ((ngModelChange)).When the user interacts with the input elements, the corresponding properties in the component are updated.
+When the properties in the component are updated (e.g., through code), the changes are reflected in the associated input elements in the UI
+This approach simplifies the process of keeping the UI and component data in sync.-->
   First Name : <input type="text" [(ngModel)]="fname"/><br/>
   Last Name : <input type="text" [(ngModel)]="lname"/><br/>
   Age : <input type="text" [(ngModel)]="age"/><br/>
   Gender :
-    <input type="radio" [ngModel]="gender" value="Male">Male
-    <input type="radio" [ngModel]="gender" value="Female">Female <br/>
+    <input type="radio" [(ngModel)]="gender" value="Male">Male
+    <input type="radio" [(ngModel)]="gender" value="Female">Female <br/>
 
   Country :
-    <select [ngModel]="country">
+    <select [(ngModel)]="country">
         <option>Nepal</option>
         <option>USA</option>
         <option>UK</option>
     </select> <br/>
 
-    Is Employed : <input type="checkbox" [ngModel]="isEmployed"> <br/>
+    Is Employed : <input type="checkbox" [(ngModel)]="isEmployed"> <br/>
   <input type="button" value="Submit" (click)="handleSubmitBtn()" />
 </div>
 

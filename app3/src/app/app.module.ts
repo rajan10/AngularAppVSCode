@@ -5,6 +5,7 @@
 //import necessary modules
 //u import this to bring in 'NgModule' decorator (used below) and related symbols from @angular/core module
 //Angular decorators (like NgModule, Component, Directive, etc.) and other Angular symbols are defined in the @angular/core module
+//The ngModel directive is part of the FormsModule, so make sure you have FormsModule imported in your Angular module (app.module.ts).
 import { NgModule } from '@angular/core'; 
 
 //importing 'BrowserModule' and 'FormsModule' from '@angular/platform-browser' and '@angular/forms' respectively

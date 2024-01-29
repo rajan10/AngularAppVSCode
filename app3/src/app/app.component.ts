@@ -13,21 +13,22 @@ import { Component } from '@angular/core';
 export class AppComponent {// Component logics go here
   title = 'app3';
 //declare the variables
-  fname:string = "Adam";
-  lname:string = "Smith";
-  age:number=25;
-  gender:string="Male";
-  country:string="India";
-  isEmployed:boolean=true;
+  fname:string = "";
+  lname:string = "";
+  age:number=0;
+  gender:string="";
+  country:string="";
+  isEmployed:boolean=false;
  
   handleSubmitBtn(){
 
     //reinitialize
-    this.fname = "Rajan";
-    this.lname="Gau";
-    this.age = 31;
-    this.gender= "Male";
-    this.country="USA";
-    this.isEmployed=false;
+    //console.log("Submit button submitted");
+    this.fname ;
+    this.lname;
+    this.age;
+    this.gender;
+    this.country;
+    this.isEmployed;
   }
 }
