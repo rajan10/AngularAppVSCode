@@ -1,7 +1,7 @@
 <div>
   <h3>
-
-    Style Directive example page.
+    
+    ngIf Directive ( Structural Directive )example page.
   </h3>
 <!-- Using Angular's style binding to dynamically set the color 
 Here, the color of the div is bound to the value of mycolor, which is determined by the logic in the component. -->
@@ -11,5 +11,7 @@ Here, the color of the div is bound to the value of mycolor, which is determined
  <!-- the ngClass directive is used to add and remove CSS classes
 In the template, the [ngClass] directive is used to bind the CSS class dynamically. 
 If myclass is "class1", the element will have the color:green; if it's "class2", the element will have the coler:red style -->
- <div ngClass="{{myclass}}">{{marks}}</div>
+ <div *ngIf="b" style="background-color:blue">Congratulations!!!</div>
+
+ <div *ngIf="!b" style="background-color:red">Sorry!!!</div>
 </div>

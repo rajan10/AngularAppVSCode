@@ -8,14 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app4';
 
-  marks:number =80;
-  myclass:string="";
+  marks:number =20;
+  b:boolean;
 
   constructor() {
     if(this.marks>=35){
-      this.myclass = "class1";
+      this.b = true;
     }else{
-      this.myclass = "class2";
+      this.b = false;
     }
    
   }
