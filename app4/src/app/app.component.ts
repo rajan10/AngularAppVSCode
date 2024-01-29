@@ -6,17 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app4';
+  cities: string[]=["Kathmandu","Toronto","New York"];  }
 
-  marks:number =20;
-  b:boolean;
-
-  constructor() {
-    if(this.marks>=35){
-      this.b = true;
-    }else{
-      this.b = false;
-    }
-   
-  }
-}
