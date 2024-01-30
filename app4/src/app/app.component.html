@@ -34,16 +34,17 @@ Here, the color of the div is bound to the value of mycolor, which is determined
 </ul> -->
 
 <h4> ngFor with Object Array Example </h4>
-<table border="1">
+<!-- <table border="1">
 <tr>
   <th>Emp ID</th> <th>Emp Name</th> <th>Emp Salary</th> <th>Action</th>
 </tr>
 
-<tr *ngFor="let emp of employees; let i = index"> <!-- *ngFor directive is used to iterate over an array of objects -->
+<tr *ngFor="let emp of employees; let i = index"> <!-- here i= index where its value change 
+  as per the iteration;  *ngFor directive is used to iterate over an array of objects -->
       <!-- Renders a table row for each employee object in the employees array.
       * Displays employee id, name, salary, and a delete button for each row. *
       The delete button calls the onDeleteClick() method, passing the index of
-      the employee to delete.  -->
+      the employee to delete.  
 
       <td>{{ emp.empId }}</td>
       <td>{{ emp.empName }}</td>
@@ -52,7 +53,7 @@ Here, the color of the div is bound to the value of mycolor, which is determined
 
 </tr>
 <tr>
-      <!-- Renders input fields to capture new employee details. * Binds
+       Renders input fields to capture new employee details. * Binds
       employee id, name and salary fields to newemployee object. * Provides a
       button to insert the new employee by calling onInsertClick(). 
     [(ngModel)] is a special Angular syntax used for two-way data binding.
@@ -60,7 +61,7 @@ Here, the color of the div is bound to the value of mycolor, which is determined
   Putting It Together:
 [(ngModel)]="newemployee.empId" connects the input field in your HTML (where the user can type the employee's ID) to the empId property of the newemployee object in your Angular code.
 If the user types something in the input field, the value is automatically stored in newemployee.empId.
-If you change newemployee.empId in your Angular code, the value in the input field updates automatically.-->
+If you change newemployee.empId in your Angular code, the value in the input field updates automatically.
       <td>
         <input
           type="text"
@@ -84,5 +85,24 @@ If you change newemployee.empId in your Angular code, the value in the input fie
       </td>
       <td><input type="button" value="Insert" (click)="onInsertClick()" /></td>
 </tr>
-</table>
+</table> -->
+
+<br class="class1">
+  <h4>Pipes Example</h4>
+  City: {{ city }} <br />
+  Salary: {{ salary }} <br />
+  n: {{ n }} <br />
+  Current Time: {{ dt }} <br />
+  Person: {{person.firstName}} {{person.lastName}} <br />
+
+  City in upper case: {{ city | uppercase }} <br />
+  City in lower case: {{ city | lowercase }} <br />
+  Currency in USD: {{ salary | currency : "USD" }} <br />
+  Currency in NPR: {{ salary | currency : "NPR" }} <br />
+  Currency in CAD: {{ salary | currency : "CAD" }} <br />
+  Short Date: {{ dt | date : "shortDate" }} <br />
+  Medium Date: {{ dt | date : "MediumDate" }} <br />
+  Formatted Date: {{ dt | date : "d/M/y" }}
+
 </div>
+
