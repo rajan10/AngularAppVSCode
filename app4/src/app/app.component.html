@@ -13,7 +13,7 @@ Here, the color of the div is bound to the value of mycolor, which is determined
 
  <div *ngIf="!b" style="background-color:red">Sorry!!!</div> -->
 
-<!-- <select [ngModel]="selectedCountry"> <!--ngModel directive(2-way directive) is binding to selectedCountry 
+<!-- <select [ngModel]="selectedCountry"> ngModel directive(2-way directive) is binding to selectedCountry 
   <option>Nepal</option>
   <option>India</option>
   <option>USA</option>
@@ -28,10 +28,61 @@ Here, the color of the div is bound to the value of mycolor, which is determined
   <p *ngSwitchCase="'UK'">UK Details Here</p>
   <p *ngSwitchDefault>Please select country</p> -->
 
-
   <!-- The *ngFor structural directive in Angular is used for iterating over a collection of items, such as an array or an object, and rendering a template for each item in the collection. -->
-<ul>
-  <li *ngFor="let city of cities">{{city}} </li> <!-- let declares a local varaible for each iteration -->
-</ul>
+<!-- <ul>
+  <li *ngFor="let city of cities">{{city}} </li> let declares a local varaible for each iteration 
+</ul> -->
 
+<h4> ngFor with Object Array Example </h4>
+<table border="1">
+<tr>
+  <th>Emp ID</th> <th>Emp Name</th> <th>Emp Salary</th> <th>Action</th>
+</tr>
+
+<tr *ngFor="let emp of employees; let i = index"> <!-- *ngFor directive is used to iterate over an array of objects -->
+      <!-- Renders a table row for each employee object in the employees array.
+      * Displays employee id, name, salary, and a delete button for each row. *
+      The delete button calls the onDeleteClick() method, passing the index of
+      the employee to delete.  -->
+
+      <td>{{ emp.empId }}</td>
+      <td>{{ emp.empName }}</td>
+      <td>{{ emp.salary }}</td>
+      <td><input type="button" value="Delete" (click)="onDeleteClick(i)" /></td>
+
+</tr>
+<tr>
+      <!-- Renders input fields to capture new employee details. * Binds
+      employee id, name and salary fields to newemployee object. * Provides a
+      button to insert the new employee by calling onInsertClick(). 
+    [(ngModel)] is a special Angular syntax used for two-way data binding.
+    It connects a variable in your Angular code to an element in your UI, allowing changes in one place to automatically affect the other.
+  Putting It Together:
+[(ngModel)]="newemployee.empId" connects the input field in your HTML (where the user can type the employee's ID) to the empId property of the newemployee object in your Angular code.
+If the user types something in the input field, the value is automatically stored in newemployee.empId.
+If you change newemployee.empId in your Angular code, the value in the input field updates automatically.-->
+      <td>
+        <input
+          type="text"
+          [(ngModel)]="newemployee.empId"
+          placeholder="Emp Id"
+        />
+      </td>
+      <td>
+        <input
+          type="text"
+          [(ngModel)]="newemployee.empName"
+          placeholder="Emp Name"
+        />
+      </td>
+      <td>
+        <input
+          type="text"
+          [(ngModel)]="newemployee.salary"
+          placeholder="Salary"
+        />
+      </td>
+      <td><input type="button" value="Insert" (click)="onInsertClick()" /></td>
+</tr>
+</table>
 </div>

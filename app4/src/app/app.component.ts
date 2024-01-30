@@ -32,6 +32,27 @@ employees:Employee[]= [new Employee(101,"John",5000),
                        new Employee(102,"Jane",6000), 
                        new Employee(103,"Jack",7000)
                       ];
+newemployee: Employee= new Employee(0, "", 0);                  
+  /**
+   * Inserts a new employee into the employees array by pushing a new Employee instance.
+   * Resets the newemployee properties after inserting. 
+   * 
+   * Deletes an employee from the employees array by splicing the array at the given index.
+   * Confirms deletion with the user first.
+  */
+  onInsertClick(){
+ 
+    this.employees.push(new Employee(this.newemployee.empId, this.newemployee.empName, this.newemployee.salary));
+
+    this.newemployee.empId=0;
+    this.newemployee.empName="";
+    this.newemployee.salary=0;
+  }
+    onDeleteClick(n: any){
+      if(confirm("Are you sure you want to delete this employee?")){
+        this.employees.splice(n,1);
+      }
+  }
   }
     
   
